@@ -1,2 +1,2 @@
 # react-study
-a study of webpack
+a study of react
