@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import Child from './Child'
 
 class Counter extends Component {
   constructor(props) {
@@ -7,6 +8,15 @@ class Counter extends Component {
     this.incrementAsync = this.incrementAsync.bind(this);
     this.incrementIfOdd = this.incrementIfOdd.bind(this);
   }
+
+  componentWillUpdate(){
+    console.log('parent will update')
+  }
+
+  componentDidUpdate(){
+      console.log('parent did update')
+  }
+
 
   incrementIfOdd() {
     if (this.props.value % 2 !== 0) {
@@ -39,6 +49,7 @@ class Counter extends Component {
         <button onClick={this.incrementAsync}>
           Increment async
         </button>
+        <Child></Child>
       </p>
     )
   }
